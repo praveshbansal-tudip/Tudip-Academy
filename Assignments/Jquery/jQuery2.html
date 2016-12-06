@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>
+      Home Page
+    </title>
+    <style>
+      p {
+          font-family: Vendana;
+          font-size: 20px;
+          position: relative;
+          top: 50px;
+          left: 55px;
+		  color:red;
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script>
+      $(document).ready(function(){
+        $(" p ").hover(function(){
+              $( this ).mousemove(function(  ) {
+                $(this).mouseup(function() {
+                    $( this ).css({"color":"red"});
+                  })
+                $(this).mousedown(function() {
+                  $( this ).css({"color":"green"});
+                });
+              });
+        });
+        $(" p ").mouseout(function() {
+          $( this ).css({"color":"red"});
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    
+    <p draggable="true"> Drag Me</p>
+
+  </body>
+</html>
