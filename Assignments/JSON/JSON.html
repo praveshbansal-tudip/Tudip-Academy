@@ -1,0 +1,74 @@
+<html>
+<head>
+<style>
+div{
+	position:absolute;
+    top: 10%;
+    left: 40%;
+}
+.image{
+	width:110px;height:50px;
+}
+#counter1, #counter2{
+
+    width:31px;
+    height:31px;
+    text-align: center;
+    color:black;
+  position:absolute;
+    top: 90%;
+    left:0.5%;
+}
+#counter2{
+  left:45%;
+}
+</style>
+ 
+<script>
+   function like()
+   {
+           
+            if(typeof(Storage) !== "undefined") 
+            {
+        if (localStorage.clickcount1) {
+            localStorage.clickcount1 = Number(localStorage.clickcount1)+1;
+        } 
+        else {
+            localStorage.clickcount1 = 1;
+        }
+        document.getElementById("counter1").innerHTML= localStorage.clickcount1 ;
+   				  					}
+   }
+function dislike()
+   {
+           
+            if(typeof(Storage) !== "undefined") 
+            {
+        if (localStorage.clickcount2) {
+            localStorage.clickcount2 = Number(localStorage.clickcount2)+1;
+        } 
+        else {
+            localStorage.clickcount2 = 1;
+        }
+        document.getElementById("counter2").innerHTML= localStorage.clickcount2;
+   				
+            					}
+   }
+   </script>
+</head>
+<body>
+	<div>
+<h1>Like or dislike</h1>
+<img src="ship.jpg" style="width:304px;height:228px;">
+		<br>
+			<button onclick="like()"><img src="like.png" class="image">
+			</button>
+
+			<button onclick="dislike()"><img src="dislike.png" class="image">
+			</button>
+			<br>
+		<div id="counter1"></div>
+		<div id="counter2"></div>
+	</div>
+</body>
+</html>
